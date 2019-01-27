@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import P5Wrapper from 'react-p5-wrapper';
+import p5 from 'p5'
+
+export function sketch (p) {
+  p.setup = function () {
+    p.createCanvas(600, 400, p.WEBGL);
+  };
+
+  p.draw = function () {
+    //put yr sketch here
+  };
+};
 
 class App extends Component {
   render() {
@@ -17,9 +29,9 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
           </a>
         </header>
+        <P5Wrapper sketch={sketch} />
       </div>
     );
   }
